@@ -1,0 +1,8 @@
+[package]
+name = "kg-ansi"
+version = "0.1.0"
+authors = ["jchlapinski <jakub.chlapinski@kodegenix.pl>"]
+edition = 2018
+workspace = ".."
+
+[dependencies]

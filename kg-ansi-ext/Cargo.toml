@@ -1,0 +1,14 @@
+[package]
+name = "kg-ansi-ext"
+version = "0.1.0"
+authors = ["jchlapinski <jakub.chlapinski@kodegenix.pl>"]
+edition = 2018
+workspace = ".."
+
+[lib]
+crate-type = ["dylib"]
+
+[dependencies]
+kg-ansi = { path = "../kg-ansi" }
+
+
