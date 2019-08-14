@@ -1,22 +1,22 @@
 #![feature(plugin_registrar, rustc_private)]
 
 extern crate syntax;
+extern crate syntax_pos;
 extern crate rustc;
 extern crate rustc_plugin;
 
-use syntax::parse::token;
-use syntax::tokenstream::TokenTree;
-use syntax::ext::base::{ExtCtxt, MacResult, DummyResult, MacEager, get_exprs_from_tts};
-use syntax::ext::build::AstBuilder;  // A trait for expr_usize.
-use syntax::ext::quote::rt::{Span, ExtParseUtils, ToTokens};
-use syntax::print::pprust::expr_to_string;
 
 use rustc_plugin::Registry;
+use syntax::ext::base::{ExtCtxt, MacEager, MacResult, get_exprs_from_tts};
+use syntax::ext::build::AstBuilder;
+use syntax::print::pprust::expr_to_string;
+use syntax::tokenstream::TokenTree;
+use syntax_pos::Span;
 
 use std::fmt::Write;
 
 fn expand_rn(cx: &mut ExtCtxt, sp: Span, args: &[TokenTree])
-             -> Box<MacResult + 'static> {
+             -> Box<dyn MacResult + 'static> {
     let mut s = String::new();
     s.push_str("println!(");
     if let Some(exprs) = get_exprs_from_tts(cx, sp, args) {
@@ -32,7 +32,8 @@ fn expand_rn(cx: &mut ExtCtxt, sp: Span, args: &[TokenTree])
         unimplemented!();
     }
 
-    MacEager::expr(cx.parse_expr(s))
+    let mut p = cx.new_parser_from_tts(args);
+    MacEager::expr(p.parse_expr(s))
 }
 
 #[plugin_registrar]
