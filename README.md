@@ -1,16 +1,14 @@
 # kg-ansi
 
-[![Latest Version](https://img.shields.io/crates/v/kg-diag.svg)](https://crates.io/crates/kg-diag)
-[![Documentation](https://docs.rs/kg-diag/badge.svg)](https://docs.rs/kg-diag)
-[![Build Status](https://travis-ci.org/Kodegenix/kg-diag.svg?branch=master)](https://travis-ci.org/Kodegenix/kg-diag)
-[![codecov](https://codecov.io/gh/kodegenix/kg-diag/branch/master/graph/badge.svg)](https://codecov.io/gh/kodegenix/kg-diag)
+[![Latest Version](https://img.shields.io/crates/v/kg-ansi.svg)](https://crates.io/crates/kg-ansi)
+[![Documentation](https://docs.rs/kg-ansi/badge.svg)](https://docs.rs/kg-ansi)
+[![Build Status](https://travis-ci.org/Kodegenix/kg-ansi.svg?branch=master)](https://travis-ci.org/Kodegenix/kg-ansi)
+[![codecov](https://codecov.io/gh/kodegenix/kg-ansi/branch/master/graph/badge.svg)](https://codecov.io/gh/kodegenix/kg-ansi)
 
-Set of crates for error/diagnostic management. I/O routines for reading 
-UTF-8 textual data with position tracking.
+Set of crates for colored ANSI output. 
 
-* crate [`kg-diag`](kg-diag) contains traits `Detail` and `Diag` for diagnostic management; 
-contains traits `ByteReader` and `CharReader` for reading textual input with position (line and column) tracking. 
-* crate [`kg-diag-derive`](kg-diag-derive) implements macro for `#[derive(Detail)]`
+* crate [`kg-ansi`](kg-ansi) is the core lib. 
+* crate [`kg-ansi-ext`](kg-ansi-ext) implements rustc plugin
 
 ## Builds statuses for Rust channels
 
@@ -18,10 +16,10 @@ contains traits `ByteReader` and `CharReader` for reading textual input with pos
 |-------------------|-------------------|-------------------|
 | [![Build1][3]][4] | [![Build2][2]][4] | [![Build3][1]][4] |
 
-[1]: https://travis-matrix-badges.herokuapp.com/repos/kodegenix/kg-diag/branches/master/1
-[2]: https://travis-matrix-badges.herokuapp.com/repos/kodegenix/kg-diag/branches/master/2
-[3]: https://travis-matrix-badges.herokuapp.com/repos/kodegenix/kg-diag/branches/master/3
-[4]: https://travis-ci.org/kodegenix/kg-diag
+[1]: https://travis-matrix-badges.herokuapp.com/repos/kodegenix/kg-ansi/branches/master/1
+[2]: https://travis-matrix-badges.herokuapp.com/repos/kodegenix/kg-ansi/branches/master/2
+[3]: https://travis-matrix-badges.herokuapp.com/repos/kodegenix/kg-ansi/branches/master/3
+[4]: https://travis-ci.org/kodegenix/kg-ansi
 
 
 ## License
