@@ -10,5 +10,3 @@ crate-type = ["dylib"]
 
 [dependencies]
 kg-ansi = { path = "../kg-ansi" }
-
-

@@ -3,5 +3,6 @@
 
 #[test]
 fn plugin() {
-    cprintln!("{}-{}", 12, "aaa");
+    cprintln!("%red'aaa {liczba}'", liczba = 12);
+    cprint!("%red[aaa {}]\n", 12);
 }
